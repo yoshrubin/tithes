@@ -12,7 +12,17 @@ datasource db {
 }
 
 
-model Example {
+model Income {
+    id        String   @id @default(cuid())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    sum       Float
+    source    String?
+    
+}
+
+model Donation {
     id        String   @id @default(cuid())
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
